@@ -32,7 +32,7 @@ export class ChromeDriver extends Binary {
   getVersionList(): Promise<string[]> {
     // If an alternative cdn is set, return an empty list.
     if (this.alternativeDownloadUrl != null) {
-      Promise.resolve([]);
+      return Promise.resolve([]);
     } else {
       return this.configSource.getVersionList();
     }
