@@ -172,7 +172,6 @@ export class FileManager {
   static downloadFile<T extends Binary>(binary: T, outputDir: string, callback?: Function):
       Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
-
       let outDir = Config.getSeleniumDir();
       let downloaded: BinaryMap<DownloadedBinary> = FileManager.downloadedBinaries(outputDir);
       let contentLength = 0;
@@ -241,7 +240,7 @@ export class FileManager {
     });
 
     let metaFiles = [
-      'chromedriver-response.xml', 'gecko-response.json', 'iedriver-response.xml',
+      'chrome-response.xml', 'gecko-response.json', 'iedriver-response.xml',
       'standalone-response.xml', 'update-config.json'
     ];
     for (let metaFile of metaFiles) {
